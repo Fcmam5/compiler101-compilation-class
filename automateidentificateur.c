@@ -4,7 +4,7 @@
 #include<string.h>
 
 void lecturechaine(char *s){
-while(1){
+while(testcaractairesuivant(&s)==0){
     *s= getchar();
     };
 
@@ -22,9 +22,9 @@ int testpremiercaract(char s){
 
 int testcaractairesuivant(char *s){
      if(('a'<= *s && *s<='z')||('A'<= *s && *s<='Z')||('0'<=*s && s<='9')||*s=='_')
-     return 1;
-     else
      return 0;
+     else
+     return 1;
 
 }
 
