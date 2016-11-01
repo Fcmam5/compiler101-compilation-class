@@ -1,38 +1,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-
+#include "identifers_automata.h"
+#include "integers_automata.h"
 /*
 * Checks if string in entry is a valid signed/unsigned integer
 examples:
 printf("Result for +99213545: %d\n", integerAtmt("+99213545"));
 */
 
-int identifersAtmt(char *strInt){
-    int len;
-    int i;
-
-    len = strlen(strInt);
-    i = 0;
-
-    // Does it starts with a char or an underscore
-    if(((strInt[0] >= 'a')&&(strInt[0] <= 'z'))||((strInt[0] >= 'A')&&
-        (strInt[0] <= 'Z'))||(strInt[0] =='_')){
-        i++;
-        while(i < len){
-            if(!(((strInt[i] >= 'a')&&(strInt[i] <= 'z'))||((strInt[i] >= 'A')&&
-                (strInt[i] <= 'Z'))||(strInt[i] == '_')||((strInt[i]>='0')&&(strInt[i]<='9')))){
-                return -1;
-            } //is it a non char or a non digit and not an underscore
-            i++;
-        } //End while
-        return 0;
-    } //End first if condition
-    return -2; //didn't start with a char nor an underscore
-}
-
 int main() {
     /* Test me  */
+    printf("Testing identifers:\n");
     printf("Result for x: %d\n", identifersAtmt("x"));
     printf("Result for x9: %d\n", identifersAtmt("x9"));
     printf("Result for _id: %d\n", identifersAtmt("_id"));
@@ -46,7 +25,17 @@ int main() {
     printf("Result for po$t: %d\n", identifersAtmt("po$t"));
     printf("Result for d@m: %d\n", identifersAtmt("d@m"));
 
-
+    printf("______________\n");
+    printf("Testing integers\n");
+    printf("Result for +99213545: %d\n", integerAtmt("+99213545"));
+    printf("Result for -0123: %d\n", integerAtmt("-123"));
+    printf("Result for 5-: %d\n", integerAtmt("5-"));
+    printf("Result for +: %d\n", integerAtmt("+"));
+    printf("Result for 0: %d\n", integerAtmt("0"));
+    printf("Result for 1561+164: %d\n", integerAtmt("1561+164"));
+    printf("Result for -01a3: %d\n", integerAtmt("-1a3"));
+    printf("Result for -a: %d\n", integerAtmt("-a"));
+    printf("Result for a: %d\n", integerAtmt("a"));
 
     return 0;
 }

@@ -1,10 +1,8 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-
+#ifndef integers_automata
+#define integers_automata
 /*
 * Checks if string in entry is a valid signed/unsigned integer
-examples: 
+examples:
 printf("Result for +99213545: %d\n", integerAtmt("+99213545"));
 printf("Result for -0123: %d\n", integerAtmt("-123"));
 printf("Result for 5-: %d\n", integerAtmt("5-"));
@@ -43,9 +41,4 @@ int integerAtmt(char *strInt){
     }
     return -1;
 }
-
-int main() {
-    /* Test me  */
-
-    return 0;
-}
+#endif
