@@ -4,6 +4,16 @@
 
 /*
 * Checks if string in entry is a valid signed/unsigned integer
+examples: 
+printf("Result for +99213545: %d\n", integerAtmt("+99213545"));
+printf("Result for -0123: %d\n", integerAtmt("-123"));
+printf("Result for 5-: %d\n", integerAtmt("5-"));
+printf("Result for +: %d\n", integerAtmt("+"));
+printf("Result for 0: %d\n", integerAtmt("0"));
+printf("Result for 1561+164: %d\n", integerAtmt("1561+164"));
+printf("Result for -01a3: %d\n", integerAtmt("-1a3"));
+printf("Result for -a: %d\n", integerAtmt("-a"));
+printf("Result for a: %d\n", integerAtmt("a"));
 */
 
 int integerAtmt(char *strInt){
@@ -36,6 +46,6 @@ int integerAtmt(char *strInt){
 
 int main() {
     /* Test me  */
-    
+
     return 0;
 }
