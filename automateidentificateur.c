@@ -4,8 +4,13 @@
 #include<string.h>
 
 void lecturechaine(char *s){
-while(testcaractairesuivant(&s)==0){
-    *s= getchar();
+
+int *boolean;
+testcaractairesuivant(s,&boolean);
+while(boolean){
+    *s=getchar();
+    testcaractairesuivant(s,&boolean);
+
     };
 
 
@@ -14,17 +19,17 @@ while(testcaractairesuivant(&s)==0){
 
 int testpremiercaract(char s){
      if(s>='a'&& s<='z' ||s>='A'&& s<='Z' )
-     return 1;
+     return 0;
      else
-      return 0;
+      return -1;
       }
 
 
-int testcaractairesuivant(char *s){
-     if(('a'<= *s && *s<='z')||('A'<= *s && *s<='Z')||('0'<=*s && s<='9')||*s=='_')
-     return 0;
+void testcaractairesuivant(char s, int *b){
+     if(s>='a'&& s<='z' ||s>='A'&& s<='Z'||(s>='0' && s<='9')||s=='_')
+     *b= 0;
      else
-     return 1;
+     *b=-1;
 
 }
 
@@ -32,16 +37,17 @@ int testcaractairesuivant(char *s){
 
 int main(void)
 {
-  int i;
 
   char s;
 
 
 
      s=getchar();
-     if(testpremiercaract(s)==1){
+     if(testpremiercaract(s)==0){
         lecturechaine(&s);
      }
+     else
+     printf("Premier caractère érroné");
 
   return 0;
 }
