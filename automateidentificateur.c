@@ -3,10 +3,9 @@
 
 #include<string.h>
 
-void lecturechaine(char *s , int *i, char mot[]){
-while(0){
+void lecturechaine(char *s){
+while(1){
     *s= getchar();
-    mot[*i+1]=*s;
     };
 
 
@@ -36,16 +35,13 @@ int main(void)
   int i;
 
   char s;
-  char mot[20];
+
 
 
      s=getchar();
-     mot[0]=s;
-     i=0;
-
-     /*if(testpremiercaract(s)==1){
+     if(testpremiercaract(s)==1){
         lecturechaine(&s);
-     }*/
+     }
 
   return 0;
 }
