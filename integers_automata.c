@@ -3,11 +3,10 @@
 #include <stdio.h>
 
 /*
-* Examples:
-* +94459, 9875, -597978, +,-, 89-1, 5598-
+* Checks if string in entry is a valid signed/unsigned integer
 */
 
-bool integerAtmt(char* strInt){
+int integerAtmt(char *strInt){
     int len;
     int i;
 
@@ -15,31 +14,28 @@ bool integerAtmt(char* strInt){
     i = 0;
 
     // Does it starts with
-    if((strInt[0] == "+")||
-        (strInt[0] == "-")||
-        ((strInt[0]>= '0')&&(strInt[0]<='9'))){
-        while(i <= len){
-            if(!(strInt[i]>= '0')&&(strInt[i]<='9')){
-                return false;
-            } //second if 'check is [i] is not a digit'
+    if (len>1) {
+        if((strInt[0] == '+')||(strInt[0] == '-')){
             i++;
-        } //End while
-        if(i>=len)
-            return true;
-    } //End first if condition
-    return false;
+            while(i < len){
+                if(!((strInt[i]>= '0')&&(strInt[i]<='9'))){
+                    return -1;
+                } //second if 'check is [i] is not a digit'
+                i++;
+            } //End while
+            if(i>=len)
+                return 0;
+        } //End first if condition
+    }else{
+        if ((strInt[0]>= '0')&&(strInt[0]<='9')) {
+            return 0;
+        }
+    }
+    return -1;
 }
 
-/* For debug
-* Bugs: a single'+' is accepted 
-*/
 int main() {
-    /* code */
-    printf("Result for +99213545\n", integerAtmt('+99213545'));
-    printf("Result for -0123\n", integerAtmt('-123'));
-    printf("Result for +\n", integerAtmt('+'));
-    printf("Result for 0\n", integerAtmt('0'));
-    printf("Result for 1561+164\n", integerAtmt('1561+164'));
-
+    /* Test me  */
+    
     return 0;
 }
