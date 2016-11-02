@@ -9,11 +9,11 @@ int identifersAtmt(char *strInt){
 
     // Does it starts with a char or an underscore
     if(((strInt[0] >= 'a')&&(strInt[0] <= 'z'))||((strInt[0] >= 'A')&&
-        (strInt[0] <= 'Z'))||(strInt[0] =='_')){
+        (strInt[0] <= 'Z'))){
         i++;
         while(i < len){
             if(!(((strInt[i] >= 'a')&&(strInt[i] <= 'z'))||((strInt[i] >= 'A')&&
-                (strInt[i] <= 'Z'))||(strInt[i] == '_')||((strInt[i]>='0')&&(strInt[i]<='9')))){
+                (strInt[i] <= 'Z'))||((strInt[i]>='0')&&(strInt[i]<='9')))){
                 return -1;
             } //is it a non char or a non digit and not an underscore
             i++;
