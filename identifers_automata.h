@@ -7,7 +7,7 @@ int identifersAtmt(char *strInt){
     len = strlen(strInt);
     i = 0;
 
-    // Does it starts with a char or an underscore
+    // Does it starts with a char
     if(((strInt[0] >= 'a')&&(strInt[0] <= 'z'))||((strInt[0] >= 'A')&&
         (strInt[0] <= 'Z'))){
         i++;
@@ -15,11 +15,11 @@ int identifersAtmt(char *strInt){
             if(!(((strInt[i] >= 'a')&&(strInt[i] <= 'z'))||((strInt[i] >= 'A')&&
                 (strInt[i] <= 'Z'))||((strInt[i]>='0')&&(strInt[i]<='9')))){
                 return -1;
-            } //is it a non char or a non digit and not an underscore
+            } //is it a non char or a non digit  
             i++;
         } //End while
         return 0;
     } //End first if condition
-    return -2; //didn't start with a char nor an underscore
+    return -2; //didn't start with a char
 }
 #endif
