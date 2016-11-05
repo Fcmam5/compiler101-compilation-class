@@ -3,13 +3,22 @@
 #include <stdio.h>
 #include "identifers_automata.h"
 #include "integers_automata.h"
+// Reading files procedure
+
 /*
 * Checks if string in entry is a valid signed/unsigned integer
-examples:
-printf("Result for +99213545: %d\n", integerAtmt("+99213545"));
+* Checks if string in entry is a valid identifer
 */
 
 int main() {
+    //Files reading
+    FILE *fichier;
+    char chaine[128];
+    fichier = fopen("./myEntry.c", "r");
+    fscanf(fichier, "%s", chaine);
+    printf("Je suis %s\n", chaine);
+    fclose(fichier);
+
     /* Test me  */
     printf("Testing identifers:\n");
     printf("Result for x: %d\n", identifersAtmt("x"));
