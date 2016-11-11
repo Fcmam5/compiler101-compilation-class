@@ -41,6 +41,7 @@ int main() {
     printf("Result for 5-: %d\n", integerAtmt("5-"));
     printf("Result for +: %d\n", integerAtmt("+"));
     printf("Result for 0: %d\n", integerAtmt("0"));
+    printf("Result for 95: %d\n", integerAtmt("95"));
     printf("Result for 1561+164: %d\n", integerAtmt("1561+164"));
     printf("Result for -01a3: %d\n", integerAtmt("-1a3"));
     printf("Result for -a: %d\n", integerAtmt("-a"));

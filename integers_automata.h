@@ -23,7 +23,7 @@ int integerAtmt(char *strInt){
 
     // Does it starts with
     if (len>1) {
-        if((strInt[0] == '+')||(strInt[0] == '-')){
+        if((strInt[0] == '+')||(strInt[0] == '-')||((strInt[0]>= '0')&&(strInt[0]<='9'))){
             i++;
             while(i < len){
                 if(!((strInt[i]>= '0')&&(strInt[i]<='9'))){
