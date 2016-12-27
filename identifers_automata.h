@@ -1,5 +1,11 @@
 #ifndef ID_AUTOMATA
 #define ID_AUTOMATA
+/**
+*@param strInt is the given string to analyze to check if it's a valid identifer
+*@retval -1 didn't contain a letter nor a number
+*@retval -2 didn't start with a letter
+*@retval 0 Success, the string in entry is a valid identifer
+**/
 int identifersAtmt(char *strInt){
     int len;
     int i;
@@ -15,7 +21,7 @@ int identifersAtmt(char *strInt){
             if(!(((strInt[i] >= 'a')&&(strInt[i] <= 'z'))||((strInt[i] >= 'A')&&
                 (strInt[i] <= 'Z'))||((strInt[i]>='0')&&(strInt[i]<='9')))){
                 return -1;
-            } //is it a non char or a non digit  
+            } //is it a non char or a non digit
             i++;
         } //End while
         return 0;

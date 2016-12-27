@@ -3,7 +3,10 @@ TP Compilation
 
 ## Timiline
 * #1 [Basic automata for reconsign identifers and integers]()
-* ## []()
+* #2 []()
+
+## Resources
+* [Tips for documenting code](http://stackoverflow.com/questions/51667/best-tips-for-documenting-code-using-doxygen)
 
 ## License
 
