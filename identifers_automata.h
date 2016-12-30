@@ -28,4 +28,26 @@ int identifersAtmt(char *strInt){
     } //End first if condition
     return -2; //didn't start with a char
 }
+
+/**
+* @description a function to check is a string in Entry is a keyword or not
+* @param [String] str supposed to be an identifier
+* @return 0 if str is a valid identifier and it's not a keword, and -1 if not
+* @code
+* isKeyword('debut'); will return -1, because the string in entry is a keyword
+*/
+int isKeyword(char *str){
+    char *keywrods = {"programme", "debut", "fin", "var",
+                      "const","ent","Bool","si","alors",
+                      "sinon","fsi","Faux", "Vrai"}
+    int keywrodsLength = 13;
+
+    for (int i = 0; i < keywrodsLength; i++) {
+        if (strcmp(str, keywrods[i])==0) {
+            return -1;
+        }
+    }
+    return 0;
+}
+
 #endif

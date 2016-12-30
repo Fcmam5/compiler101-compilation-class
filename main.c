@@ -1,8 +1,6 @@
 #include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
-#include "identifers_automata.h"
-#include "integers_automata.h"
+#include "myIncludes.h"
 // Reading files procedure
 
 /*
@@ -47,5 +45,8 @@ int main() {
     printf("Result for -a: %d\n", integerAtmt("-a"));
     printf("Result for a: %d\n", integerAtmt("a"));
 
+    /**
+    * loop until we find a separator, then check if it's valid -> it is in the symbol table ?
+    */
     return 0;
 }
