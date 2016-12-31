@@ -11,28 +11,51 @@ typedef struct tLine{
     tLine *theNext;
 };
 
-//insert in the head of our linked-list (symbol table)
-void insert(char *intro, tLine *list){}
+/**
+* @description insert in the head of our linked-list (symbol table)
+* @return 0 if Success or the identifer is already in
+* @return -1 if the identifer is a keyword
+*/
+int insert(char *intro, int n, tLine *list){
+    if (isKeyword(intro)) {
+        if (find(intro,list)>=0) {
+            createCell(intro,n,list);
+            return 0;
+        }
+        return 0;
+    }
+    return -1;
+}
 
-//check if the token exsits in the symbol table
-void find(char *intro, tLine *list){}
+//TODO:check if the token exsits in the symbol table
+int find(char *intro, tLine *list){
+    int position = 0;
+    tLine current;
 
-//TODO: Review linked-list methodes tmrw
-void fillCell(char *strInt, int n, tLine *list){
-    tLine pointer;
-    //Filling the cell
-    *pointer -> str = strInt;
-    *pointer -> number = n;
-    *pointer -> theNext = *list -> theNext;
-    *list = *pointer;
-    //linking the cell to the head of our list
+    if (list == NULL){
+        return -2;
+    }
+
+    *current = list->theNext;
+    while ((current != list)&&(position!=0)) {
+        current = current->theNext;
+        position++;
+    }
+    if (current == list) {
+        return position;
+    }else{
+        return 0;
+    }
 }
 
 *tLine createCell(char *strInt, int n, tLine *list){
     tLine pointer;
     pointer = (*tLine) malloc(sizeof(tLine));
     if(pointer) {
-        fillCell(strInt,n,list);
+        *pointer -> str = strInt;
+        *pointer -> number = n;
+        *pointer -> theNext = *list -> theNext;
+        *list = *pointer;
         return pointer;
     }
     else return NULL;
