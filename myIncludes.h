@@ -10,5 +10,6 @@
 #include "operators_automata.h"
 #include "separators_automata.h"
 #include "symbolTable.h"
+#include "syntax_analyzer.h"
 
 #endif
