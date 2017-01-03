@@ -27,25 +27,29 @@ int insert(char *intro, int n, tLine *list){
     return -1;
 }
 
-//TODO:check if the token exsits in the symbol table
+/**
+* @description find a string in the list
+* @return 0 if Success or the string isn't in our linked-list
+* @return -1 if Fail, the string is in our list
+* @return 1 if Success, the list is empty
+*/
 int find(char *intro, tLine *list){
     int position = 0;
     tLine current;
 
     if (list == NULL){
-        return -2;
+        return 1;
     }
 
     *current = list->theNext;
     while ((current != list)&&(position!=0)) {
+        if (strcmp(*current->str,intro)==0) {
+            return -1;
+        }
         current = current->theNext;
         position++;
     }
-    if (current == list) {
-        return position;
-    }else{
-        return 0;
-    }
+    return 0;
 }
 
 *tLine createCell(char *strInt, int n, tLine *list){
