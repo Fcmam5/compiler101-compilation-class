@@ -5,8 +5,8 @@
 *@retval -1 is not an operator
 *@retval 0 Success, it's an operator
 **/
-int operatorAtmt(char *entryStr){
-    if ((entryChar=='+')||(entryChar=='=')||(strcpy(entryChar,":=")==0)) {
+int operatorAtmt(char *entryChar){
+    if ((*entryChar=='+')||(*entryChar=='=')||(strcpy(entryChar,":=")==0)) {
         return 0;
     }
     return -1;

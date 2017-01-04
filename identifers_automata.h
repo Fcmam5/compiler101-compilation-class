@@ -37,9 +37,9 @@ int identifersAtmt(char *strInt){
 * isKeyword('debut'); will return -1, because the string in entry is a keyword
 */
 int isKeyword(char *str){
-    char *keywrods = {"programme", "debut", "fin", "var",
+    char *keywrods[] = {"programme", "debut", "fin", "var",
                       "const","ent","Bool","si","alors",
-                      "sinon","fsi","Faux", "Vrai"}
+                      "sinon","fsi","Faux", "Vrai"};
     int keywrodsLength = 13;
 
     for (int i = 0; i < keywrodsLength; i++) {

@@ -9,11 +9,15 @@
 */
 
 // Remove spaces between tokens
-void noSpacePlease(char *str) {}
+void noSpacePlease(char *str) {
+    if (str[0]==" ") {
+        str = cutStrFrom(str,1);
+        noSpacePlease(str);
+    }
+}
 
 void noCommentPlease(char *str) {
     int strLength = strlen(str);
-    
     if ((str[0]=='/')&&(str[1]=='*')&&(str[strLength-1]=='/')&&
         (str[strLength-2]=='*')) {
             *str = "";

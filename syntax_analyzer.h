@@ -41,7 +41,36 @@ int rule_V(){}
 
 int rule_C(){}
 
-int rule_D(){}
+/*
+* @description, recursive calls ends until found a ("'='integerAtmt" or ("ent" or "Bool") or "")
+* @param [String] str
+* @return 0 if it's a correct string respecting the rule
+ */
+int rule_D(char *str){
+    /*
+    * TODO: Do more here !
+    *   D → C V
+    *   C → const Dec / λ
+    *   V → var Dev / λ
+    */
+    if (strcmp(substr(str,0,4),"const")>=0) {
+        return 0; //TODO Call C rule_C
+    }else{
+        if (strcmp(substr(str,0,2),"var")>=0) {
+            return 0;//TODO Call C rule_V
+        }else{
+            if (strcmp(str,"")==0) {
+                return 0;
+            }else{
+                return -1;
+            }
+        }
+    }
+}
+
+int rule_Inst(char *str){
+    
+}
 
 int parse(){
     /*TODO: check if it starts with "programme" and ends with "fin" and have
@@ -50,3 +79,8 @@ int parse(){
     */
 }
 #endif
+/*
+((strstr(substr(str,0,4),"const")||(strstr(substr(str,0,2),"var")),strstr(str,"")))
+if ((integerAtmt(str)==0)||(strcmp(str,"ent")==0)||
+    (strcmp(str,"Bool")==0)||(strcmp(str,"")==0)) {
+*/
