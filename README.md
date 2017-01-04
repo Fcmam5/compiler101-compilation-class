@@ -16,4 +16,4 @@ TP Compilation
 ## License
 
 MIT licensed
-Done by [Fortas Abdeldjalil](https://github.com/Fcmam5) and a great help from [Rekkab Nesrine Hanane](https://github.com/nesrinehanane).
+Done by [Fortas Med. Abdeldjalil Mokhtar](https://github.com/Fcmam5).

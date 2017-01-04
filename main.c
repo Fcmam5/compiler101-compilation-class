@@ -1,12 +1,14 @@
+/**
+* IGMO compiler101
+* A simple compiler that respected a given grammar
+* @author Fortas Abdeldjalil [mail:dr.fcmam5@gmail.com | Github: https://github.com/Fcmam5 ]
+* Source Code: https://github.com/Fcmam5/compiler101-compilation-class
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include "myIncludes.h"
-// Reading files procedure
 
-/*
-* Checks if string in entry is a valid signed/unsigned integer
-* Checks if string in entry is a valid identifer
-*/
+// TODO: Reading files procedure
 
 int main() {
     //Files reading
@@ -30,6 +32,7 @@ int main() {
     //Compiling
     compilationResult = parse(program);
 
+    //TODO: Fix this depending on the errors
     switch (compilationResult) {
         case 0: printf("Compilation was successful\n"); break;
         case 1: printf("An erro occured\n"); break;
